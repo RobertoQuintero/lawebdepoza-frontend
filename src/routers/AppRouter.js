@@ -3,7 +3,9 @@ import { useDispatch } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { getPlaces } from "../actions/places";
 import CategoriesScreen from "../components/categories/CategoriesScreen";
-import HomeScreen from "../components/home/HomeScreen";
+import PlacesScreen from "../components/places/PlacesScreen";
+import SearchScreen from "../components/search/SearchScreen";
+import { Navbar } from "../components/ui/Navbar";
 
 const AppRouter = () => {
   const dispatch = useDispatch();
@@ -13,10 +15,12 @@ const AppRouter = () => {
 
   return (
     <BrowserRouter>
+      <Navbar />
       <Routes>
-        <Route path="/" element={<HomeScreen />} />
+        <Route path="/" element={<PlacesScreen />} />
         <Route path="/categories" element={<CategoriesScreen />} />
-        <Route path="/*" element={<HomeScreen />} />
+        <Route path="/search" element={<SearchScreen />} />
+        <Route path="/*" element={<PlacesScreen />} />
       </Routes>
     </BrowserRouter>
   );

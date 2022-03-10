@@ -1,0 +1,53 @@
+.places__grid{
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+  gap: 15px;
+  grid-auto-rows: minmax(280px,auto);
+  max-width: 300px;
+  
+  @media screen and (min-width:500px) {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 500px;
+    
+  }
+  @media screen and (min-width:990px) {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1100px;
+  } 
+}
+.places__card{
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 1px 1px 10px rgba(0,0,0,.5);
+  transition: box-shadow ease .3s;
+  cursor: pointer;
+}
+
+.places__card:hover{
+  box-shadow: 1px 1px 20px rgba(0,0,0,.5);
+}
+
+.places__card-img{
+  overflow: hidden;
+  height: 200px;
+}
+.places__card-img img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: .3s;
+}
+.places__card:hover img{
+  transform:  perspective(500px) translateZ(10px);
+}
+.places__card-data{
+  padding: 10px 10px 20px;
+}
+
+.places__card-data-name{
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+.places__card-data-diection{
+  font-size: 16px;
+}
